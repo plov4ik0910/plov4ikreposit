@@ -148,8 +148,7 @@ h2 {
   border-radius: 0.45rem;
 }
 
-.skills dt,
-.project h3 {
+.skills dt {
   margin: 0 0 0.35rem;
   font-size: 1.15rem;
   font-weight: 800;
@@ -161,7 +160,7 @@ h2 {
   line-height: 1.5;
 }
 
-.project {
+.contacts {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1.55fr);
   gap: 1.2rem;
@@ -169,6 +168,48 @@ h2 {
   border: 0;
   border-radius: 0.45rem;
   background: var(--surface);
+}
+
+.contact-list {
+  margin: 0;
+}
+
+.contact-list div {
+  display: grid;
+  grid-template-columns: 5.5rem minmax(0, 1fr);
+  gap: 0.75rem;
+  align-items: baseline;
+  padding-block: 0.65rem;
+}
+
+.contact-list div + div {
+  border-top: 1px solid var(--line);
+}
+
+.contact-list div:first-child {
+  padding-top: 0;
+}
+
+.contact-list div:last-child {
+  padding-bottom: 0;
+}
+
+.contact-list dt {
+  color: var(--muted);
+}
+
+.contact-list dd {
+  margin: 0;
+}
+
+.contact-list a {
+  color: var(--accent);
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.contact-list a:hover {
+  color: var(--accent-hover);
 }
 
 .site-footer {
@@ -191,7 +232,14 @@ h2 {
 
 @media (max-width: 42rem) {
   .skills,
-  .project {
+  .contacts {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 28rem) {
+  .contact-list div {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
   }
 }
